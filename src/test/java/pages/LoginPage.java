@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(xpath = "//*[resource-id='com.telran.ilcarro:id/editLoginEmail']")
+    @FindBy(xpath = "//*[@text='Email']")
     MobileElement inputEmail;
 
-    @FindBy(xpath = "//*[resource-id='com.telran.ilcarro:id/editLoginPassword']")
+    @FindBy(xpath = "//*[@text='Password']")
     MobileElement inputPassword;
 
-    @FindBy(xpath = "//*[resource-id='com.telran.ilcarro:id/loginBtn']")
+    @FindBy(xpath = "//*[@class='android.widget.Button']")
     MobileElement btnYalla;
 
     public void login(UserDTO user) {

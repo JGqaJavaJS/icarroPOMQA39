@@ -10,6 +10,13 @@ public class SearchPage extends BasePage{
     @FindBy(xpath = "//*[@text='Login']")
     MobileElement btnLogin;
 
+    @FindBy(xpath = "//*[@text='My Cars']")
+    MobileElement btnopenMyCars;
+
+    public void openMyCarsPage() {
+        clickBase(btnopenMyCars, 10);
+    }
+
     public void openMenu() {
         clickBase(btnOpenMenu, 30);
     }
