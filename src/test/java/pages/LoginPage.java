@@ -16,6 +16,7 @@ public class LoginPage extends BasePage {
     MobileElement btnYalla;
 
     public void login(UserDTO user) {
+        System.out.println(user.getEmail());
         typeTestBase(inputEmail, 30, user.getEmail());
         typeTestBase(inputPassword, 5, user.getPassword());
         clickBase(btnYalla, 5);
