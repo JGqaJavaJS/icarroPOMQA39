@@ -1,6 +1,6 @@
 package pages;
 
-import dto.UserDTO;
+import dto.UserDto;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,9 +15,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@class='android.widget.Button']")
     MobileElement btnYalla;
 
-    public void login(UserDTO user) {
-        System.out.println(user.getEmail());
-        typeTestBase(inputEmail, 30, user.getEmail());
+    public void login(UserDto user) {
+        System.out.println(user.getUsername());
+        typeTestBase(inputEmail, 30, user.getUsername());
         typeTestBase(inputPassword, 5, user.getPassword());
         clickBase(btnYalla, 5);
     }

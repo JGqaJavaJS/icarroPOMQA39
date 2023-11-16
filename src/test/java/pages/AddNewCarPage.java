@@ -61,6 +61,11 @@ public class AddNewCarPage extends BasePage{
         typeTestBase(inputCity, 10, data.getCity());
         typeTestBase(inputPrice, 10, String.valueOf(data.getPricePerDay()));
         typeTestBase(inputCarClass, 10, data.getCarClass());
+
+        MobileElement element1 = (MobileElement) AppiumConfig.getDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))"
+                        + ".scrollIntoView(new UiSelector().textContains(\"type\"))"));
+
         clickBase(inputFuelType, 10);
         clickBase(fuelPetrol, 30);
         typeTestBase(inputYear, 10, String.valueOf(data.getYear()));
@@ -92,6 +97,14 @@ public class AddNewCarPage extends BasePage{
     }
 
 }
+
+/*
+MultiTouchAction multiTouch = new MultiTouchAction(driver);
+TouchAction action0 = new TouchAction(driver).tap(el);
+TouchAction action1 = new TouchAction(driver).tap(el);
+TouchAction action2 = new TouchAction(driver).tap(el);
+multiTouch.add(action0).add(action1).add(action2).perform();
+ */
 /*
         // Scroll to the element with text "Your Element Text"
         scrollElementIntoView(driver, "Your Element Text");

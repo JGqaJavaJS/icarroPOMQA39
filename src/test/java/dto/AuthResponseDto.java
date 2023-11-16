@@ -7,11 +7,8 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
 @Builder
-public class UserDTO {
-    String name;
-    String lastName;
-    String email;
-    String password;
+@ToString
+public class AuthResponseDto {
+        String accessToken;
 }
