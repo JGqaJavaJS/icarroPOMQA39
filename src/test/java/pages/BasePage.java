@@ -47,6 +47,7 @@ public class BasePage {
         clickBase(element, time);
         element.clear();
         element.sendKeys(text);
+        hideKeyBoard();
     }
 
     public void hideKeyBoard() {

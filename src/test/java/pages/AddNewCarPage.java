@@ -1,7 +1,11 @@
 package pages;
 
+import config.AppiumConfig;
 import dto.AddNewCarDto;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.support.FindBy;
 
 public class AddNewCarPage extends BasePage{
@@ -52,24 +56,38 @@ public class AddNewCarPage extends BasePage{
 
     public void addNewCar(AddNewCarDto data) {
         typeTestBase(inputSerNumber, 30, data.getSerialNumber());
-        hideKeyBoard();
         typeTestBase(inputManufacture, 10, data.getManufacture());
-        hideKeyBoard();
         typeTestBase(inputModel, 10, data.getModel());
-        hideKeyBoard();
         typeTestBase(inputCity, 10, data.getCity());
-        hideKeyBoard();
         typeTestBase(inputPrice, 10, String.valueOf(data.getPricePerDay()));
-        hideKeyBoard();
         typeTestBase(inputCarClass, 10, data.getCarClass());
-        hideKeyBoard();
         clickBase(inputFuelType, 10);
         clickBase(fuelPetrol, 30);
-        //hideKeyBoard();
         typeTestBase(inputYear, 10, String.valueOf(data.getYear()));
-        hideKeyBoard();
         typeTestBase(inputSeatsCount, 10, String.valueOf(data.getSeats()));
-        hideKeyBoard();
+
+//        AppiumConfig.getDriver().findElementByAndroidUIAutomator("new UiScrollable(new    UiSelector()" +
+//                ".scrollable(true).instance(0))" +
+//                ".scrollIntoView(new UiSelector().textContains(\"car\")" +
+//                ".instance(0))").click(); //scroll down to the element and click
+
+        MobileElement element = (MobileElement) AppiumConfig.getDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))"
+                        + ".scrollIntoView(new UiSelector().textContains(\"car\"))"));
+
+
+//        // Get the coordinates (x, y) of the element
+//        int x = btnAddCar.getLocation().getX();
+//        int y = btnAddCar.getLocation().getY();
+//
+//        TouchAction touchAction = new TouchAction(AppiumConfig.getDriver());
+//        touchAction.press(PointOption.point(x, y))
+//                .waitAction()
+//                .moveTo(PointOption.point(x +30, y + 30)) // Adjust the scroll distance as needed
+//                .release()
+//                .perform();
+
+        // add scroll
         clickBase(btnAddCar, 10);
     }
 
