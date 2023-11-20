@@ -1,7 +1,6 @@
 package tests;
 
 import dto.AddNewCarDto;
-import dto.UserDto;
 import org.testng.annotations.Test;
 import utils.RandomUtils;
 

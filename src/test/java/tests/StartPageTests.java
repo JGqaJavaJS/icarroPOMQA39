@@ -7,6 +7,11 @@ public class StartPageTests extends BaseTest{
 
     @Test
     public void textTitleTest() {
+        startScreenPage.experimentGetLocation();
         Assert.assertTrue(startScreenPage.validateTextTitle());
+    }
+    @Test
+    public void actionsTest() {
+        startScreenPage.experimentMultiTouch();
     }
 }
